@@ -3,6 +3,16 @@ from rest_framework import serializers
 from ...models import UserModel
 
 
+
+class GetUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserModel
+        exclude = [
+            "created_at",
+            "updated_at",
+        ]
+
+
 class BaseUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserModel
