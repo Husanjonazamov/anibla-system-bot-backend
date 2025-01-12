@@ -26,12 +26,17 @@ class UserModel(AbstractBaseModel):
 
     def __str__(self):
         return self.first_name
+    
+    def save(self, *args, **kwargs):
+        self.pk = self.user_id
+        super().save(*args, **kwargs)
 
     @classmethod
     def _create_fake(self):
         return self.objects.create(
             name="Test",
         )
+
 
     class Meta:
         db_table = "User"

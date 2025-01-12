@@ -22,3 +22,4 @@ class AnimeAdmin(ModelAdmin):
         "id",
         "__str__",
     )
+    inlines = [EpisodeInline]

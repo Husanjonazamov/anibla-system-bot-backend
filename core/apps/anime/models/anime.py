@@ -7,7 +7,7 @@ class AnimeModel(AbstractBaseModel):
     name = models.CharField(_("Nomi"), max_length=255)
     uz_name = models.CharField(_("Uz Nomi"), max_length=255)
     shikimore_url = models.URLField(_("shikimore_url"), blank=True, null=True)
-    rejissor = models.ForeignKey(
+    rejissyor = models.ForeignKey(
         UserModel, on_delete=models.SET_NULL, related_name=_("Rejissor"),null=True)
     is_active = models.BooleanField(_("is_active"), default=True)
 
